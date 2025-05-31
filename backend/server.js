@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const postRoutes = require("./routes/posts");
-
+const uri = "mongodb+srv://hari:9cRZBWAiv3ukcYk5@cluster0.62cws.mongodb.net/betterindia?retryWrites=true&w=majority&appName=Cluster0";
 const app = express();
 
 app.use(cors());
