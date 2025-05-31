@@ -1,0 +1,235 @@
+/* MAIN DASHBOARD LAYOUT */
+.user-dashboard {
+  display: flex;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f6fd;
+  transition: margin-left 0.3s ease;
+}
+
+/* SIDEBAR */
+.user-sidebar {
+  width: 240px;
+  background: linear-gradient(to bottom right, #c8a1e0, #945cc4);
+  padding: 25px 20px;
+  color: white;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.user-greeting {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.user-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.user-menu li:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+/* Profile menu item styling */
+.user-menu li.profile-item {
+  margin-top: 10px;
+  margin-bottom: 18px;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* MAIN CONTENT */
+.user-content {
+  flex-grow: 1;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+.user-content h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #444;
+}
+
+/* POST CARDS */
+.post-card {
+  background: #ffffff;
+  border: 1px solid #e2d4f0;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 8px rgba(180, 145, 220, 0.1);
+}
+
+.post-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-top: 12px;
+  border-radius: 6px;
+}
+
+/* COMMENT BOX */
+.comment-box {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.comment-box input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.comment-box button {
+  padding: 8px 14px;
+  background-color: #945cc4;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.comment-box button:hover {
+  background-color: #7a45a7;
+}
+
+.comments {
+  margin-top: 12px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.comments p {
+  margin: 4px 0;
+}
+
+/* LIKE & COMMENT BUTTONS - ICON ONLY */
+.button-group {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.button-group button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.button-group button:hover {
+  transform: scale(1.1);
+  color: orangered;
+}
+
+/* HEART ICON BASE */
+.heart-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: black;
+  stroke-width: 2;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+/* FILLED HEART WHEN LIKED WITH ANIMATION */
+.heart-icon.liked {
+  fill: red;
+  stroke: red;
+  animation: heart-bounce 0.4s ease;
+}
+
+/* HEART BOUNCE KEYFRAMES */
+@keyframes heart-bounce {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  background: #c8a1e0;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .user-dashboard {
+    flex-direction: column;
+  }
+
+  .user-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 220px;
+    z-index: 999;
+    background: linear-gradient(to bottom right, #c8a1e0, #945cc4);
+    transition: left 0.3s ease-in-out;
+  }
+
+  .user-sidebar.open {
+    left: 0;
+  }
+
+  .user-content {
+    margin-top: 60px;
+    padding: 16px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .user-dashboard.sidebar-open .user-content {
+    margin-left: 220px;
+  }
+}
