@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const Post = require("../models/Post.js");
+const Post = require("../models/post.js");
 const fs = require("fs");
 const path = require("path");
 
