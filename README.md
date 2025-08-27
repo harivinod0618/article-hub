@@ -99,7 +99,6 @@ Copy
 Edit
 npm start
 The project will be live at: http://localhost:3000
-
 Tech Stack
 Frontend: React, Tailwind CSS (optional), React Router
 
@@ -185,4 +184,4 @@ Only the admin with verified code or authorized email can access post upload/edi
 
 Regular users are prompted to complete their profile before accessing content.
 
-Admins and users are redirected appropriately after login.
+Admins and users are redirected appropriately after login
